@@ -1,0 +1,10 @@
+{
+ "channel": "stable",
+ "format": 1,
+ "manifest": "https://github.com/Lazy-Apathy/L4ZY/releases/download/v2026.9.26.4/manifest-2026.9.26.4.json",
+ "manifest_sha256": "07e62914466225ca1b42c5739ff62d7418870912318fb98015728fd1a4dcf789",
+ "manifest_size": 1341547,
+ "platform": "windows-x64",
+ "product": "l4zy",
+ "version": "2026.9.26.4"
+}
