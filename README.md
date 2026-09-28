@@ -1,6 +1,6 @@
 # L4ZY
 
-A Cube 2: Sauerbraten (2020) client with **hardware ray-traced lighting**, **NVIDIA DLAA/DLSS**, **native HDR output**, **local AI chat translation**, and a lot of quality-of-life additions: friends list, kill feed, automatic match recording, HD-aim demos and more.
+A Cube 2: Sauerbraten (2020) client with **hardware ray-traced lighting**, **NVIDIA DLAA/DLSS**, **native HDR output**, **local AI chat translation** and a **settings assistant**, a **drag-and-drop HUD editor**, and a lot of quality-of-life additions: friends list, kill feed, CTF flag timer, automatic match recording, HD-aim demos and more.
 
 It plays on normal Sauerbraten servers. Nothing extra is sent to public or vanilla servers.
 
@@ -91,6 +91,7 @@ L4ZY ships its own `menus.cfg`: a new main menu, and an Options hub with pages f
 
 - **Chat Translation** is on the main menu and in Options → Game.
 - `/traduction` also opens it.
+- **Search settings…** and **Settings assistant (AI)…** are at the top of Options.
 
 ## Features
 
@@ -239,11 +240,58 @@ Supported codes: `bg ca cs da de en es et fi fr hr hu id it nl no pl pt ro ru sk
 - **F7** `toggletranslate`: mute or unmute translation (chat is still shown).
 - `translatestatus`: shows the service and language state.
 
+### Settings search
+
+**Menu:** Options → *Search settings…*
+
+- Type a word, in English or French: the matching settings of every Options page appear as real checkboxes and sliders you can change right there, grouped by page, with a link to the page.
+- It also finds settings by keyword (`son`, `souris`, `viseur`, `lumière`…); accents and capitals do not matter.
+
+### Settings assistant (local AI)
+
+Ask in plain words how to find or change a setting, and the translation model answers like a person: where it is, what it does, what its values mean, the current value. When you ask for a change (or answer its question), it proposes it.
+
+- **Nothing changes until you click Apply** next to a proposal; **Undo** puts the old value back.
+- It can change game settings, put actions on keys, including up to 4 actions on one key (e.g. `bind LSHIFT "setweapon RI; attack"`), open a settings page, and open the HUD editor.
+- It can never run scripts, quit, connect, chat, record, touch files, servers or keys: every proposal is checked by the game before it is shown and again when you click, whatever the model writes.
+- It uses your installed translation model (no internet unless you set an API key).
+
+**Menu:** Options → *Settings assistant (AI)…*, or `/assistant`
+
+| Setting / command | What it does | Default |
+|---|---|---|
+| *Think first* (checkbox in the window) | the model thinks before answering: a few seconds slower, better on open questions; unticked again when you leave the window | off |
+| `assistantask "<question>"` | ask from the console | |
+
+### HUD editor (drag and drop)
+
+**Menu:** Options → HUD → *Move HUD parts (drag and drop)…*, or `/hudedit`.
+
+- Every part of the HUD gets a frame: drag inside it to **move** it, drag an **edge** to change its width or height, a **corner** for both (**Shift** keeps the proportions).
+- **T** or middle click on a frame: its text follows the new size, or keeps its normal size.
+- **Right click** on a frame: back to its original place and size. **Esc** or **Enter** when done.
+- Parts: health/armour/ammo icons, radar, flag timer, flag messages, kill feed, killing spree, match clock, score, ammo bar, spectator block, FPS and clock, console, chat.
+- *Put everything back in place* (same page) or `hudlayoutreset` resets them all. The layout is saved in `hudlayout`.
+
+### CTF: flag timer and flag messages
+
+- **Flag timer:** bottom right, how long you (or the player you watch) have carried a flag stolen from the enemy base. Not shown for a flag picked up from the ground.
+- **Flag messages:** big lines in the upper middle of the screen, apart from the kill feed, when a flag is stolen, picked up or scored, with the run time of a flag that came from the base.
+
+**Menu:** Options → HUD
+
+| Setting | What it does | Default |
+|---|---|---|
+| `flagtimer` | flag timer | `1` |
+| `flagfeed` | flag messages | `1` |
+| `flagfeedfade` | seconds a flag message stays | `4` |
+
 ### Friends and clan tag
 
 - Your own local list of nicks (never IPs), plus an optional clan tag: every nick that contains it counts as a friend.
 - Friends are coloured on their body, the name above their head, the scoreboard, chat, the kill feed and the minimap.
   - One colour for your team, another for the other team.
+  - Also on the first-person arm of the friend you spectate, and in demos.
 - *Find friends online* scans the public server list, and lets you join a friend's server.
 
 **Menu:** Options → Friends; colours in Options → HUD → Friends
@@ -266,17 +314,20 @@ Tints your body, name, HUD gun and chat/kill-feed name. Click the player preview
 ### Kill feed, react times and streaks
 
 - **Kill feed:** `killer [weapon] victim`, fading out, with an `xN` tag on your streaks.
+- **Kills-deaths against each player:** `[3-1]` next to a kill feed line is how many times you killed that player and they killed you this match.
 - **React times:** on your own kills and deaths, how long the target had been in view and under your crosshair (`view / crosshair ms`).
   - On your deaths the value is approximate (`~`) unless the killer also runs this client on a compatible server.
 - **Kill streak popups:** display only, no gameplay effect.
+- When you spectate someone or watch a demo, "mine" and "my team" (filter, streaks, kills-deaths, react times) are the player you watch. React times of another player are only shown when their aim is exact (HD demo, compatible server).
 
-**Menu:** Options → HUD → *Kill Feed* / *Kill Streak* (Adjust pages for position and size)
+**Menu:** Options → HUD → *Kill Feed* / *Kill Streak*; place and size them with the HUD editor
 
 | Setting | Default |
 |---|---|
 | `killfeed`, `killfeedconsole`, `killfeedfilter` (0 all, 1 team, 2 mine) | `1`, `0`, `0` |
 | `killfeedx`, `killfeedy`, `killfeedscale`, `killfeedalign`, `killfeedfade` (s), `killfeedmax` | `0.02`, `0.40`, `0.5`, `-1`, `5`, `5` |
 | `reacttime` | `1` |
+| `killfeedvs` (kills-deaths against each player) | `1` |
 | `killstreak`, `killstreakothers`, `killstreaktk`, `killstreakstep` | `1`, `1`, `1`, `5` |
 | `killstreakx`, `killstreaky`, `killstreakscale`, `killstreakalign`, `killstreakfade` (s) | `0.50`, `0.18`, `0.85`, `0`, `3` |
 
@@ -328,7 +379,9 @@ Tints your body, name, HUD gun and chat/kill-feed name. Click the player preview
 
 ### Scoreboard, sound and mouse
 
-- **Scoreboard columns** (Options → HUD → Scoreboard): `showfrags` (`1`), `showkd`, `showflags`, `showaccuracy`, `showstatus` (`0`), `showlang` (`1`), and `scoreboardalpha` for the background opacity (`40`).
+- **Scoreboard columns** (Options → HUD → Scoreboard): `showfrags` (`1`), `showkd`, `showflags`, `showaccuracy`, `showstatus` (`0`), `showlang` (`1`), `showvs` (`1`: your kills-deaths against each player), and `scoreboardalpha` for the background opacity (`40`).
+  - Admin, auth and master are shown as a tag after the name; names are dimmed while a player is dead.
+- **Crosshair** (Options → HUD): the hit crosshair takes the colour of the player you hit (friend colour, otherwise blue or red); `crosshairreloaddim` dims it while reloading (`0`).
 - **Sound mix** (Options → Sound → Mix): `mixweapons`, `mixhits`, `mixpain`, `mixitems`, `mixannounce`, `mixflags`, `mixmove`, `mixworld`.
   - All go from 0 to 200 (`100` = normal). `mixreset` puts them all back to 100.
 - **Mouse** (Options → Mouse): `mousedpi` (`800`), `setcm360 <cm>` and `getcm360`, for hipfire cm per 360°.
@@ -341,6 +394,18 @@ Tints your body, name, HUD gun and chat/kill-feed name. Click the player preview
 ## Changelog
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
+
+### 2026.9.28.1 (test)
+
+- Settings search: Options → *Search settings…*, by name or keyword, in English or French.
+- Settings assistant: ask the local AI about any setting; it explains, and changes only what you Apply. Optional *Think first*.
+- HUD editor: move and resize every part of the HUD with the mouse, width and height apart, text at its size or not.
+- CTF: flag timer, and big flag messages (stolen / picked up / scored, with the run time).
+- Kills-deaths against each player in the kill feed and the scoreboard.
+- Spectating and demos: kill feed filter, streaks, kills-deaths and react times follow the player you watch.
+- Hit crosshair in the colour of the player hit; no more dimming while reloading (option).
+- Admin / auth / master tags; names dimmed when dead; friend colours on the spectated player's arm and in demos.
+- Fixes: loading screen that could stay frozen, languages column mixing players, starting a solo game dead, left click in demos, scoreboard drawn over menus, console frag messages with the same name twice, ray-tracing messages removed from the console (`rtconsole 1` shows them).
 
 ### 2026.9.26.4
 
