@@ -395,7 +395,7 @@ Tints your body, name, HUD gun and chat/kill-feed name. Click the player preview
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.9.28.1 (test)
+### 2026.9.28.1 (stable)
 
 - Settings search: Options → *Search settings…*, by name or keyword, in English or French.
 - Settings assistant: ask the local AI about any setting; it explains, and changes only what you Apply. Optional *Think first*.
