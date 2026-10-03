@@ -460,7 +460,7 @@ Tints your body, name, HUD gun and chat/kill-feed name. Click the player preview
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.3.1 (test)
+### 2026.10.3.1 (stable)
 
 - 3D sound (Steam Audio): Options → Sound → *3D Sound*. Headphones (HRTF) let you hear whether a sound is ahead or behind, above or below; walls muffle sounds (*Occlusion*). Off by default.
 - Low latency mode: the mouse is read once the GPU catches up, for a more direct aim with ray tracing, native HDR or V-Sync. On by default; *Strict* goes further at the cost of some FPS (Options → Display).
