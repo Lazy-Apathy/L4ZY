@@ -467,7 +467,7 @@ Tints your body, name, HUD gun and chat/kill-feed name. Click the player preview
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.4.1 (test)
+### 2026.10.4.1 (stable)
 
 - AMD FSR 3.1 upscaling, next to DLAA/DLSS: Options → Graphics → *Anti-Aliasing* (FSR Native, Quality, Balanced, Performance, with a sharpening slider). No frame generation.
 - Ray tracing: sharp reflections on water and on surfaces the map made reflective, and the shine of lamps and the sun on glossy surfaces. Both On; you can turn them off in Options → Graphics (*RT Reflections*, *RT Specular*).
