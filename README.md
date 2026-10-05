@@ -494,7 +494,7 @@ Idea from p1xbraten; written for L4ZY.
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.5.1 (test)
+### 2026.10.5.1 (stable)
 
 - Ray tracing: lighting is now smooth across faceted floors, slopes and rocks, like classic lighting (Options → Graphics → *RT Normals*, On by default).
 - Ray tracing in edit mode: new or removed geometry and texture changes now show up in the ray-traced lighting, shortly after you stop editing (no cost outside edit mode).
