@@ -507,7 +507,7 @@ Idea from p1xbraten; written for L4ZY.
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.7.1 (test)
+### 2026.10.7.1 (stable)
 
 - Ray tracing: weapon lights redone. Short muzzle flashes sized to each weapon (your gun lights up with them), rockets and grenades light their path in flight, and an explosion's light lasts as long as the explosion itself.
 - New projectile colours for rockets and grenades (glow in flight and explosion), separately for *Me*, *Others* and *All*; with ray tracing, the light follows the projectile colour, and muzzle flashes follow the trail colour (Options → HUD → *Weapon Trails: Colours*).
