@@ -508,7 +508,7 @@ Idea from p1xbraten; written for L4ZY.
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.8.1 (test)
+### 2026.10.8.1 (stable)
 
 - Sharper image in Native: the FXAA filter that softened textures and player models is now off by default. If you liked the smoother edges, tick *FXAA in Native* in Options → Graphics → *Anti-Aliasing*.
 - Exclusive fullscreen: choosing a resolution now applies it right away; the *Custom* fields apply at once too.
