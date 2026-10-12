@@ -415,7 +415,7 @@ Idea from p1xbraten; written for L4ZY.
 
 - **Kill feed:** `killer [weapon] victim`, fading out, with an `xN` tag on your streaks.
 - **Kills-deaths against each player:** `[3-1]` next to a kill feed line is how many times you killed that player and they killed you this match.
-- **React times:** on your own kills and deaths, the time from the first frame the enemy was really visible on your screen to the killing shot, and how long he was under your crosshair (`view / crosshair ms`).
+- **React times:** on your own kills and deaths, the time from the first frame the enemy was really visible on your screen to the killing shot, and how long they were under your crosshair (`view / crosshair ms`).
   - On your deaths the value is approximate (`~`) unless the killer also runs this client on a compatible server.
 - **Others' react times** (`reacttimeall`, off by default): on a compatible server, frags between two other players also show the killer's own react times, when the killer runs this client with react times on. Spectators too.
 - **Kill streak popups:** display only, no gameplay effect.
@@ -518,7 +518,7 @@ eplaced`. One try per match, never retried; if the server demo has no HD aim, yo
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.12.1 (test)
+### 2026.10.12.1 (stable)
 
 - New graphics profiles *Ultra*, *High*, *Medium* and *Low* (Options → Graphics → *Performance*); each of their options can also be set on its own.
 - Ray tracing: soft shadows, on by default, with their own denoiser (NRD SIGMA).
