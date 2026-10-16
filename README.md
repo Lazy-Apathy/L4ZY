@@ -543,7 +543,7 @@ Tiny Apa (WIP) is the first player profile: bots on a human-like base, tuned on 
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.16.1 (test)
+### 2026.10.16.1 (stable)
 
 - Bots: new optional "Tiny Apa" (WIP) bots in Bot Match, modelled on Apathy's own play, with a level and a different form each game (main menu → *Bot Match* → *bots play*). Classic stays the default.
 - Anti-aliasing: Temporal AA leaves the menu; if it was on, it is turned off once. New, off by default: sharpening for DLAA/DLSS and *Sharper textures* with DLSS/FSR (Options → Graphics → *Anti-Aliasing*).
