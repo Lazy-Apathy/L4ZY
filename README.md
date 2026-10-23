@@ -414,7 +414,7 @@ Pick the colour of each weapon's trail: for everyone (*All*), and if you want, d
 
 With ray tracing, lights follow your colours: a muzzle flash takes the trail colour, a rocket or grenade and its explosion take the projectile colour (never the smoke colour). Projectile colours and the muzzle flash light boxes are on the same pages (Options → HUD).
 
-Idea from p1xbraten; written for L4ZY.
+Requested by a player.
 
 ### Kill feed, react times and streaks
 
@@ -599,7 +599,7 @@ Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/rel
 - Ray tracing: less shimmer on distant textures in motion with DLAA/DLSS. If you prefer the sharper look, choose *Sharper* in Options → Graphics → *RT Textures*.
 - Ray tracing: no more faint dark ring on the floor around you (the old *Creases* effect is no longer applied on top of ray tracing). The *Creases* checkbox is gone from the menu: Ambient Occlusion (Options → Graphics → *Lighting*) does that job in classic lighting.
 - Ray tracing: fixed a crash when the player model changes, or when switching between players while spectating, during a ray-traced game.
-- Weapon trail colours: pick a colour for each weapon's trail, separately for your own shots (*Me*), everyone else's (*Others*) and both (*All*), with hex codes or presets (Options → HUD → *Weapon Trails: Colours*). Stock colours by default; there is no team-based colour. Idea from p1xbraten.
+- Weapon trail colours: pick a colour for each weapon's trail, separately for your own shots (*Me*), everyone else's (*Others*) and both (*All*), with hex codes or presets (Options → HUD → *Weapon Trails: Colours*). Stock colours by default; there is no team-based colour. Requested by a player.
 - Team colours (optional, off by default): one colour for all teammates and one for all enemies, and friends can follow them (Options → HUD → *Team colours*).
 - Custom player model: a *Custom model* choice and a button that opens the folder to drop your own model in; no colour is drawn over it.
 - Local games no longer show the clan client check or "Welcome".
