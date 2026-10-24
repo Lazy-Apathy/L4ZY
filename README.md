@@ -556,7 +556,7 @@ Classic bots stay the default.
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.10.25.1 (test)
+### 2026.10.25.1 (stable)
 
 - Bots: Tiny Apa find their way on a walk grid made for each map (jump pads, teleporters, small steps, drops) and keep clear of deadly falls. The grid is built little by little the first time a map is played, then kept on disk and updated after map edits (main menu → Bot Match → walk grid settings..).
 - Bots: Tiny Apa aim at the part of a player they can see, keep one opponent in mind, shoot at where they believe you are, and react to sounds without knowing who made them.
