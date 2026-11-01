@@ -620,7 +620,7 @@ Classic bots stay the default.
 
 Each release is listed on the [Releases](https://github.com/Lazy-Apathy/L4ZY/releases) page, newest first.
 
-### 2026.11.1.1 (test)
+### 2026.11.1.1 (stable)
 
 - Bots: Tiny Apa no longer fire before their crosshair is on you or at the wall in front of you, and in a duel they shoot a little sooner when you appear in front of them.
 - Bots: Tiny Apa turn round when your shot passes close, and in a duel look towards a sound you make elsewhere.
