@@ -1,10 +1,10 @@
 {
  "channel": "test",
  "format": 1,
- "manifest": "https://github.com/Lazy-Apathy/L4ZY/releases/download/v2026.10.25.1/manifest-2026.10.25.1.json",
- "manifest_sha256": "ff061078369bb0c70511623a6d0f7037a9a1011d73eeb76efd7b1622459d3985",
- "manifest_size": 1345478,
+ "manifest": "https://github.com/Lazy-Apathy/L4ZY/releases/download/v2026.11.1.1/manifest-2026.11.1.1.json",
+ "manifest_sha256": "2f20075c05adc11339b9970d97618a5dc332838b6c1f28f9eae7237efdd58320",
+ "manifest_size": 1345600,
  "platform": "windows-x64",
  "product": "l4zy",
- "version": "2026.10.25.1"
+ "version": "2026.11.1.1"
 }
